@@ -59,6 +59,7 @@ public class SerialAudio extends CordovaPlugin {
      */
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
         METHODS method = null;
+        System.out.println("Execute");
         try {
             method = METHODS.valueOf(action);
         } catch (Exception e) {
@@ -66,6 +67,7 @@ public class SerialAudio extends CordovaPlugin {
         };
         switch( method ) {
             case sendByte:
+                System.out.println("sendByte");
                 this.sendByte(args);
                 break;
             case receiveByte:
@@ -96,9 +98,11 @@ public class SerialAudio extends CordovaPlugin {
      */
     public void sendByte(JSONArray args) throws JSONException {
         final String str = args.getString(0);
+        System.out.println("sending: "+str);
         this.cordova.getThreadPool().execute(new Runnable() {
             public void run() {
                 AudioSerialOutMono.output(str);
+                System.out.println("Sent");
             }
         });
     }
