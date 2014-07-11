@@ -22,9 +22,9 @@ SerialAudio.prototype.sendByte = function(successCallback, errorCallback, byte) 
 };
 SerialAudio.prototype.receiveByte = function(successCallback, errorCallback) {
     argscheck.checkArgs('fF', 'SerialAudio.receiveByte', arguments);
-    alert('receiving');
+    //alert('receiving');
     var win = function(result) {
-        alert('finished');
+        //alert('finished');
         successCallback(result.receivedByte);
     };
     exec(win, errorCallback, "SerialAudio", "receiveByte",[]);
