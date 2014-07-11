@@ -7,23 +7,15 @@
 
 package vzaramel.cordova.serialaudio;
 
-import android.app.Activity;
-import android.content.pm.ActivityInfo;
-import android.os.Bundle;
 import android.os.SystemClock;
-import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-
-
+import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 public class SerialAudio extends CordovaPlugin {
 
@@ -46,18 +38,10 @@ public class SerialAudio extends CordovaPlugin {
     {
         super.initialize(cordova, webView);
         AudioSerialOutMono.activate();
-        try {
-            AudioSerialOutMono.new_baudRate = Integer.parseInt(baudbox.getText().toString());
-        } catch (Exception e) {
-            AudioSerialOutMono.new_baudRate = 9600;
-        }
-        
+        AudioSerialOutMono.new_baudRate = 9600;
         AudioSerialOutMono.new_levelflip = false;
         AudioSerialOutMono.UpdateParameters(true);
-        
-        
         in = AudioSerialInMono.getInstance();
-        
     }
     @Override
     public void onDestroy() {
@@ -111,10 +95,10 @@ public class SerialAudio extends CordovaPlugin {
      * @throws JSONException
      */
     public void sendByte(JSONArray args) throws JSONException {
-        final char byte_out = args.getChar(0);
+        final String byte_out = args.getString(0);
         this.cordova.getThreadPool().execute(new Runnable() {
             public void run() {
-                AudioSerialOutMono.output(byte_out);
+                AudioSerialOutMono.output(String);
             }
         });
     }
