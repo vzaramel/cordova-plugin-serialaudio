@@ -17,17 +17,17 @@ function SerialAudio(){
  */
 SerialAudio.prototype.sendByte = function(successCallback, errorCallback, byte) {
     argscheck.checkArgs('fF', 'SerialAudio.sendByte', arguments);
-    alert('sending');
+    //alert('sending');
     exec(successCallback, errorCallback, "SerialAudio", "sendByte", [byte]);
 };
 SerialAudio.prototype.receiveByte = function(successCallback, errorCallback) {
     argscheck.checkArgs('fF', 'SerialAudio.receiveByte', arguments);
     alert('receiving');
-    var win = function(result) {
-        alert('finished');
-        successCallback(result.receivedByte);
-    };
-    exec(win, errorCallback, "SerialAudio", "receiveByte");
+    //var win = function(result) {
+    //    alert('finished');
+    //    successCallback(result.receivedByte);
+    //};
+    exec(successCallback, errorCallback, "SerialAudio", "receiveByte");
 };
 SerialAudio.prototype.startReading = function(successCallback, errorCallback) {
     argscheck.checkArgs('fF', 'SerialAudio.startReading', arguments);
