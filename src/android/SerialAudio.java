@@ -18,12 +18,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class SerialAudio extends CordovaPlugin {
-
+    
     static public final char cr = (char) 13; // because i don't want to type that in every time
     static public final char lf = (char) 10; // because i don't want to type that in every time
     //public String datatosend = "asdasdasdasd";
     private AudioSerialInMono in;
-    private char receivedByte;
     public static final String TAG = "SerialAudio";
     private enum METHODS {
         sendByte,
@@ -111,12 +110,12 @@ public class SerialAudio extends CordovaPlugin {
      */
     public void receiveByte(final CallbackContext callbackContext) throws JSONException {
         if (in.hasChar()) {
-            receivedByte = in.receive();
+            String receivedByte = in.receive()+"";
             JSONObject obj = new JSONObject();
             obj.put("receivedByte", receivedByte);
             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, obj));
         }else{
-            receivedByte = 0xFF;
+            String receivedByte = "";
             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.IO_EXCEPTION, 5));
         }
     }
@@ -149,7 +148,7 @@ public class SerialAudio extends CordovaPlugin {
     }
     
     
-
-
+    
+    
 }
 
