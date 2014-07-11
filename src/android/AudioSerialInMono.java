@@ -1,5 +1,4 @@
-package re.serialout;
-
+package vzaramel.cordova.serialaudio;
 /**
  * Created by Zara on 2014-07-03.
  */

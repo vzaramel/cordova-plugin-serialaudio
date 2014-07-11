@@ -24,8 +24,6 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
 import org.json.JSONArray;
 import org.json.JSONException;
-import re.serialaudio.AudioSerialInMono;
-import re.serialaudio.AudioSerialOutMono;
 
 public class SerialAudio extends CordovaPlugin {
 

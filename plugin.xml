@@ -32,6 +32,7 @@
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
             <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
             <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+        </config-file>
 
         <source-file src="src/android/SerialAudio.java" target-dir="src/vzaramel/cordova/serialaudio" />
         <source-file src="src/android/AudioCapturer.java" target-dir="src/vzaramel/cordova/serialaudio" />

@@ -1,4 +1,4 @@
-package re.serialout;
+package vzaramel.cordova.serialaudio;
 
 import android.media.AudioFormat;
 import android.media.AudioRecord;
