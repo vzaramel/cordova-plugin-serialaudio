@@ -1,3 +1,7 @@
+//This is not Code
+//All Credits to RobotsEveryWhere
+//I made some modifications to the base code
+
 package re.serialout;
 
 //THIS IS CURRENTLY BEING OPTIMIZED
