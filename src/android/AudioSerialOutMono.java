@@ -1,12 +1,8 @@
 //This is not Code
 //All Credits to RobotsEveryWhere
 //I made some modifications to the base code
-<<<<<<< HEAD
-package vzaramel.cordova.serialaudio;
-=======
 
-package re.serialout;
->>>>>>> FETCH_HEAD
+package vzaramel.cordova.serialaudio;
 
 //THIS IS CURRENTLY BEING OPTIMIZED
 
