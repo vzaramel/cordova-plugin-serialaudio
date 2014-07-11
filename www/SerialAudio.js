@@ -27,7 +27,7 @@ SerialAudio.prototype.receiveByte = function(successCallback, errorCallback) {
         alert('finished');
         successCallback(result.receivedByte);
     };
-    exec(successCallback, errorCallback, "SerialAudio", "receiveByte",[]);
+    exec(win, errorCallback, "SerialAudio", "receiveByte",[]);
 };
 SerialAudio.prototype.startReading = function(successCallback, errorCallback) {
     argscheck.checkArgs('fF', 'SerialAudio.startReading', arguments);
