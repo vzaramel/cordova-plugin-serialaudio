@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="vzaramel.cordova.serialaudio"
+    version="1.0.0">
+    <name>SerialAudio</name>
+    <description>Cordova Serial Over Audio Jack Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,serial,audio</keywords>
+    <repo>https://github.com/vzaramel/cordova-plugin-serialaudio.git</repo>
+    <issue>https://github.com/vzaramel/cordova-plugin-serialaudio/issues</issue>
+
+    <js-module src="www/SerialAudio.js" name="SerialAudio">
+        <clobbers target="SerialAudio" />
+    </js-module>
+
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="DTMF" >
+                <param name="android-package" value="vzaramel.cordova.serialaudio.SerialAudio"/>
+            </feature>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+            <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+        <source-file src="src/android/SerialAudio.java" target-dir="src/vzaramel/cordova/serialaudio" />
+        <source-file src="src/android/AudioCapturer.java" target-dir="src/vzaramel/cordova/serialaudio" />
+        <source-file src="src/android/AudioSerialInMono.java" target-dir="src/vzaramel/cordova/serialaudio" />
+        <source-file src="src/android/AudioSerialOutMono.java" target-dir="src/vzaramel/cordova/serialaudio" />
+        <source-file src="src/android/IAudioReceiver.java" target-dir="src/vzaramel/cordova/serialaudio" />
+    </platform>
+
+
+</plugin>

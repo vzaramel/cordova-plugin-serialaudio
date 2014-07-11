@@ -1,0 +1,19 @@
+{
+    "version": "1.0.0",
+    "name": "vzaramel.cordova.serialaudio",
+    "cordova_name": "SerialAudio",
+    "description": "Cordova Serial Audio Plugin",
+    "license": "",
+    "repo": "https://github.com/vzaramel/cordova-plugin-serialaudio.git",
+    "issue": "https://github.com/vzaramel/",
+    "keywords": [
+        "cordova",
+        "serial",
+        "audio"
+    ],
+    "platforms": [
+        "android"
+    ],
+    "engines": [],
+    "englishdoc": “Serial Over Audio”
+}
