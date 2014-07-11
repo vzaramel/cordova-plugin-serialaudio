@@ -19,7 +19,7 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="DTMF" >
+            <feature name="SerialAudio" >
                 <param name="android-package" value="vzaramel.cordova.serialaudio.SerialAudio"/>
             </feature>
         </config-file>
