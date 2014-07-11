@@ -95,10 +95,10 @@ public class SerialAudio extends CordovaPlugin {
      * @throws JSONException
      */
     public void sendByte(JSONArray args) throws JSONException {
-        final String byte_out = args.getString(0);
+        final String str = args.getString(0);
         this.cordova.getThreadPool().execute(new Runnable() {
             public void run() {
-                AudioSerialOutMono.output(String);
+                AudioSerialOutMono.output(str);
             }
         });
     }
