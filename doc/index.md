@@ -1,5 +1,5 @@
 
-# vzaramel.cordova.dtmf
+# vzaramel.cordova.serialaudio
 
 ## Installation
 
