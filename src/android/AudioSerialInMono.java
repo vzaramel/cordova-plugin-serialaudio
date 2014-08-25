@@ -77,12 +77,12 @@ public class AudioSerialInMono implements IAudioReceiver{
 //            tb[i] = tempBuf[i] - tempBuf[i - 1];
 //        }
         //bit = false;
-        int difMax = 10000;
+        int difMax = 4000;
 
         for ( int i = 0; i < tempBuf.length; i++) {
             if ( i+1 < len )
                 tb[i+1] = tempBuf[i+1] - tempBuf[i];
-            if (!bit && tb[i] < -3000 ){// )){//&& ((tb[i] > difMax && tempBuf[i] > 10000) ||(tempBuf[i] > 20000))) {
+            if (!bit && tb[i] < -2000 ){// )){//&& ((tb[i] > difMax && tempBuf[i] > 10000) ||(tempBuf[i] > 20000))) {
                 //if( i + 1 < len) tb[i+1] = tempBuf[i+1] - tempBuf[i];
                 if(!(tb[i+1<len?i+1:i] < -difMax || tb[i] < -difMax)){
                     continue;
